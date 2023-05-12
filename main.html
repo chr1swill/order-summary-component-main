@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Order Summary card</title>
+  </head>
+  <body>
+    <main class="summary">
+      <img
+        src="./images/illustration-hero.svg"
+        alt="Illustration of a lady wearing headphone listening to music with a cellphone in her hand and music notes surrounding her"
+        class="summary__image"
+      />
+
+      <article class="summary__content">
+        <h1 class="summary__content-title">Order Summary</h1>
+        <p class="summary__content-text">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+        <div class="summary__plans flex-group">
+          <div class="flex-group">
+            <img
+              src="./images/icon-music.svg"
+              alt="vector icon of a music note"
+              class="summary__plans__icon"
+            />
+            <div class="stacked-grid">
+              <p class="plans__title reduce-line-height">Annual Plan</p>
+              <p class="plans__text reduce-line-height">$59.99/year</p>
+            </div>
+          </div>
+          <p class="plans__link-text">
+            <a href="#" target="_blank" role="button" class="plans__link"
+              >Change</a
+            >
+          </p>
+        </div>
+        <button href="#" target="_blank" role="button" class="summary__button">
+          <p class="summary__button__text">Proceed to Payment</p>
+        </button>
+        <p class="summary__link__text">
+          <a href="#" target="_blank" role="button" class="summary__link__text"
+            >Cancel Order</a
+          >
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+:root {
+  --clr-main-primary-100: 0, 0%, 100%;
+  --clr-main-accent-300: 230, 75%, 98%;
+  --clr-text-primary-500: 223, 47%, 23%;
+  --clr-bg-accent-400: 225, 100%, 94%;
+  --clr-cta-primary-500: 245, 75%, 52%;
+
+  --clr-main-primary-100-opacity: hsla(var(--clr-main-primary-100), 0.9);
+  --clr-main-accent-300-opacity: hsla(var(--clr-main-accent-300), 1);
+  --clr-text-primary-500-opacity: hsla(var(--clr-text-primary-500), 0.6);
+  --clr-bg-accent-400-opacity: hsla(var(--clr-bg-accent-400), 1);
+  --clr-cta-primary-500-opacity: hsla(var(--clr-cta-primary-500), 0.7);
+
+  --ff-default: 'Red Hat Display', sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-100: 1rem;
+  --fs-200: 1.125rem;
+  --fs-300: 1.25rem;
+  --fs-400: 1.375rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.7rem;
+  --fs-700: 1.75rem;
+  --fs-800: 1.875rem;
+  --fs-900: 2rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+/*ANCHOR - Utility Classes*/
+.flex-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  justify-content: space-between;
+}
+
+.stacked-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  /* padding: 0 20px 0 0; */
+}
+
+.reduce-line-height {
+  line-height: 1.5;
+}
+
+.summary__content-wrapper {
+  padding: 30px 20px;
+}
+
+.summary__content {
+  display: grid;
+  padding: 30px 25px;
+  max-width: 100%;
+}
+/*ANCHOR - General Styling */
+
+body {
+  background-color: hsl(var(--clr-bg-accent-400));
+  color: hsl(var(--clr-text-primary-500));
+  text-align: center;
+  font-family: var(--ff-default);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+  overflow-y: hidden;
+}
+
+.summary {
+  /*ANCHOR - Summary area variables */
+
+  --bottom-spacing: 0 0 25px 0;
+  --round-corners: 12px;
+  --hover-transition: , 0.1s ease;
+
+  background-color: hsl(var(--clr-main-primary-100));
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.summary__image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.summary__content-title {
+  font-weight: var(--fw-black);
+  font-size: var(--fs-500);
+  margin: 0 0 10px 0;
+}
+
+.summary__content-text {
+  color: var(--clr-text-primary-500-opacity);
+  padding: 0 15px;
+  margin: var(--bottom-spacing);
+}
+
+.summary__plans {
+  max-width: 100%;
+  padding: 20px 15px;
+  margin: var(--bottom-spacing);
+
+  background-color: var(--clr-main-accent-300-opacity);
+  border-radius: var(--round-corners);
+}
+
+.summary__plans__icon {
+  padding: 0 15px 0 0;
+}
+
+.plans__title {
+  font-weight: var(--fw-black);
+}
+
+.plans__text {
+  color: var(--clr-text-primary-500-opacity);
+}
+
+/*ANCHOR - button and links styles*/
+
+.plans__link-text,
+.plans__link-text:visited {
+  transition: color var(--hover-transition);
+  text-decoration: underline;
+
+  color: hsl(var(--clr-cta-primary-500));
+  font-weight: var(--fw-bold);
+  font-size: 0.9rem;
+}
+
+.plans__link-text:active,
+.plans__link-text:hover {
+  color: var(--clr-cta-primary-500-opacity);
+  text-decoration: none;
+}
+
+.summary__button,
+.summary__button:visited {
+  transition: background-color, color var(--hover-transition);
+
+  max-width: 100%;
+  border: 0;
+  border-radius: var(--round-corners);
+  background-color: hsl(var(--clr-cta-primary-500));
+  color: hsl(var(--clr-main-primary-100));
+  box-shadow: 0 20px 10px 0 rgba(0, 0, 0, 0.1);
+  margin: var(--bottom-spacing);
+  font-weight: var(--fw-bold);
+  padding: 15px;
+}
+
+.summary__button:hover,
+.summary__button:active {
+  background-color: var(--clr-cta-primary-500-opacity);
+}
+
+.summary__link__text,
+.summary__link__text:visited {
+  transition: color var(--hover-transition);
+
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary-500-opacity);
+  margin: var(--bottom-spacing);
+}
+
+.summary__link__text:active,
+.summary__link__text:hover {
+  color: hsl(var(--clr-text-primary-500));
+  font-weight: var(--fw-bold);
+}
